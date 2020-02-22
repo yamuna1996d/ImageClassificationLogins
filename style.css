@@ -1,3 +1,5 @@
+@import '~pretty-checkbox/src/pretty-checkbox.scss';
+
 *{
     color: rgb(218, 206, 198);
 }
@@ -17,18 +19,96 @@
     border-radius: 20px;
 
 }
+.box{
+    position: absolute;
+    top: 45%;
+    left: 55%;
+    transform: translate(-50%,-50%);
+
+}
+.box label{
+    
+    position: relative;
+    cursor: pointer;
+}
+.box label input{
+    
+    display: none; 
+}
+.box label input:checked~span{
+    color: rgb(237, 237, 243);
+    border: 2px solid #082881;
+ }
+ .box label input:checked~span.yes{
+    color: darkgreen;
+    border-color: darkgreen;
+    box-shadow: inset 0 0 10px #082881;
+ }
+ .box label input:checked~span:before{
+     content: '';
+     width: 100%;
+     height: 100%;
+     left: 2px;
+     top: 10px;
+     background:#082881 ;
+     z-index: -2;
+     filter: blur(10px);
+  
+ }
+ .box label input:checked~span.yes:before,
+ .box label input:checked~span.yes:after{
+    background: darkgreen;
+ }
+ .box label input:checked~span.no:before,
+ .box label input:checked~span.no:after{
+    background: darkgreen;
+ }
+ .box label input:checked~span.no:after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 10px;
+    top: 0;
+    background:#6be653 ;
+    z-index: -5;
+    filter: blur(15px);
+ 
+}
+.box label input:checked~span.no{
+    color: darkviolet;
+    border-color: darkviolet;
+    box-shadow: inset 0 0 20px #082881;
+ }
+ .box label input:checked~span.other{
+    color: firebrick;
+    border-color: firebrick;
+    box-shadow: inset 0 0 10px #d1a139;
+ }
+.box label span{
+    position: relative;
+    display: inline-block;
+    margin: 20px,0px;
+    width: 80px;
+    text-align: center;
+    border: 2px solid #020f42;
+    color: rgba(241, 237, 237, 0.856);
+    border-radius: 24px;
+
+ }
+
 .inpt:focus{
     width: 280px;
     border-color: darkgreen;
 }
 body{
-    background-image: url(pl.jpg);
+    background-image: url(ni.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Courier New', Courier, monospace;
 
 }
+
 .form-container{
     
     border-radius: 9px;

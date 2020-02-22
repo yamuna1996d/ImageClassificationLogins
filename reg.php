@@ -32,7 +32,23 @@
     </tr>
     <tr>
         <td>Gender</td>
-        <td><input type="text" name="gender" class="inpt"></td>
+        <td>
+        <div class="box">
+        <label>
+            <input type="radio" name="gender" value="Male">
+            <span class="yes">Male</span>
+        </label>
+        <label>
+        <input type="radio" name="gender" value="Female">
+        <span class="no">Female</span>
+    </label>
+    <label>
+        <input type="radio" name="gender" value="Other">
+        <span class="other">Other</span>
+    </label>
+
+    </div>
+</td>
     </tr>
     <tr>
         <td>Pin code</td>
