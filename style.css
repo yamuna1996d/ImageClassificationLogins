@@ -3,9 +3,26 @@
 }
 .inpt{
     color: rgba(0, 0, 0, 0.904);
+    border: 0;
+    background: none;
+    display: block;
+    /* margin: 20px auto; */
+    border: 2px solid #082881;
+    padding: 5px 5px;
+    color: floralwhite;
+    width: 200px;
+    text-align: center;
+    transition: 0.25s;
+    outline: none;
+    border-radius: 20px;
+
+}
+.inpt:focus{
+    width: 280px;
+    border-color: darkgreen;
 }
 body{
-    background-image: url(emland.jpg);
+    background-image: url(pl.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -26,9 +43,11 @@ body{
 box-shadow: 13px -11px 11px 3px rgba(0,0,0,0.75);
 }
 
-.btn-danger{
+.btn-outline-success{
     border-radius: 0px;
+    border-radius: 24px;
     width: 200px;
+    
 
 }
 h1{

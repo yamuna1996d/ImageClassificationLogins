@@ -28,3 +28,61 @@
 -moz-box-shadow: 26px 28px 16px 11px rgba(0,0,0,0.75);
 box-shadow: 26px 28px 16px 11px rgba(0,0,0,0.75);
   }
+  .profile{
+    border-radius: 9px;
+    border: 0px  #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    height: 450px;
+    
+    -webkit-box-shadow: 26px 28px 16px 11px rgba(0,0,0,0.75);
+-moz-box-shadow: 26px 28px 16px 11px rgba(0,0,0,0.75);
+box-shadow: 26px 28px 16px 11px rgba(0,0,0,0.75);
+    
+  }
+  .profileimg{
+    width: 300px; 
+  }
+  .view{
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 1px;
+    border: 10px 10px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: blue;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .details{
+    height: 40%;
+    width: 100%;
+    background-color: rgb(9, 51, 105);
+    position: absolute;
+    bottom: 30px;
+    box-sizing: border-box;
+    transition: .5s;
+    padding: 20px;
+    transform: perspective(500px) scale(0);
+    transform-origin: bottom;
+  }
+  .details.avtive{
+    bottom: 0;
+    transform: perspective(500px) scale(1);
+
+  }
+  .close{
+    width: 50px;
+    font-size: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }

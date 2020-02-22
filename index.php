@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="js/bootstrap.js">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -31,7 +32,7 @@
     <tr>
     <td>
         <!-- <a href="#"><div class="btn btn-danger" name="but">Login</div></a> -->
-    <Button class="btn btn btn-outline-success btn-block" type="submit" name="but">Login</Button>
+    <Button class="btn btn-outline-success btn-block" type="submit" name="but">Login</Button>
     
     </td>
     </tr>
@@ -81,7 +82,13 @@ if(isset($_POST["but"])){
      }
     }
     else{
-        echo "<script>alert('Invalid Cridentials')</script>";;
+        echo "<script type='text/javascript'>
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+          })
+        </script>";;
     }
 }
 ?>

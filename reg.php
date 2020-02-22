@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="js/bootstrap.js">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -83,23 +84,37 @@ $dis=$_POST["dis"];
 $u=$_POST["user"];
 $pa=$_POST["pass"];
 $cpa=$_POST["cpass"];
+if($pa == $cpa){
     $server="localhost";
     $dbusername="root";
     $password="";
     $dbname="satelliteImg";
-    $con=new mysqli($server,$dbusername,$password,$dbname);
-    if($pa == $cpa){
+    $con=new mysqli($server,$dbusername,$password,$dbname);   
     $sql="INSERT INTO `register`(`name`, `address`, `phone`, `gender`, `pin`, `district`, `username`, `Password`) VALUES ('$n','$a',$pl,'$gen',$pi,'$dis','$u','$pa')";
     $result= $con->query($sql);
     if($result===TRUE){
-     echo "<script>alert('Successfully Registered')</script>";
+     echo "<script type='text/javascript'>Swal.fire(
+        'Successfully Registered!',
+        'That thing is still around?',
+        'success'
+      )</script>";
     }
     else{
-     echo "<script>alert('Error')</script>".$con->error;
+     echo "<script type='text/javascript'>
+     Swal.fire({
+         icon: 'error',
+         title: 'Oops...',
+         text: 'Something went wrong!',
+       })
+     </script>".$con->error;
     }
 }
 else{
-    echo "<script>alert('Check Passwords')</script>";
+    echo "<script type='text/javascript'>Swal.fire(
+        'If the passwords are same?',
+        'That thing is still around?',
+        'question'
+      )</script>";
 }
 }
 ?>

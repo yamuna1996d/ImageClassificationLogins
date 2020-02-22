@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylewel.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -28,7 +29,22 @@
     
   </ul>
 </nav>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.view').click(function(){
+    $('.details').addClass('avtive')
+  })
+  $('.close').click(function(){
+    $('.details').removeClass('avtive')
+  })
+})
+</script>
 
+<form method="GET" class="profile">
+<img src="prd.jpg" class="profileimg"
+        alt="example placeholder">
+<a href="#" class="view">View profile</a>
 
 <?php
 session_start();
@@ -52,13 +68,20 @@ if(isset($_SESSION['userid'])){
             $pin=$row['pin'];
 
 
-            echo "<table class='tableclass='table table-borderless'><tr><td>Name :</td><td>$names</td></tr>
+            echo "<div class='details'>
+            <table class='tableclass='table'>
+            <tr><td>Name :</td><td>$names</td></tr>
             <tr><td>Address :</td><td>$addr</td></tr></tr>
             <tr><td>Phone no :</td><td>$phone</td></tr>
             <tr><td>Gender :</td><td>$gender</td></tr>
             <tr><td>Pin :</td><td>$pin</td></tr>
-
-            </table>";
+            </table>
+            <div class='close'>
+            
+            </div>
+            <img src='closes.png' class='close'
+        alt='example placeholder'>
+            </div>";
    
 }
     }
@@ -66,5 +89,6 @@ if(isset($_SESSION['userid'])){
 
 ?> 
 
+</form>
 </body>
 </html>
